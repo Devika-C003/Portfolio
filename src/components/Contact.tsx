@@ -1,38 +1,42 @@
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiMail } from "react-icons/fi";
+import { SiGithub, SiLeetcode } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { githubUrl, profile } from "@/data/portfolio";
 import ContactForm from "./ContactForm";
-import Section from "./Section";
 
 export default function Contact() {
   return (
-    <Section id="contact" label="Contact">
-      <div className="contact">
+    <section id="contact" className="container">
+      <div className="cta contact reveal">
         <div className="contact-intro">
-          <h2 className="contact-title">
-            Have a role, a project or an idea worth building? <em>Let’s talk.</em>
-          </h2>
-          <p className="muted">
-            I’m open to full-time roles and interesting collaborations, and always happy to talk about AI. I
-            usually reply within a day or two.
+          <p className="cta-kicker">
+            <FiMail aria-hidden="true" /> Let’s talk
           </p>
-          <a href={`mailto:${profile.email}`} className="contact-email">
-            {profile.email}
-          </a>
-          <ul className="hero-links">
+          <h2>Got an idea, a role or a problem worth solving?</h2>
+          <p className="muted">
+            Whether it’s a full-time role, a freelance project or a chat about AI, my inbox is open. I usually
+            reply within a day or two.
+          </p>
+          <ul className="contact-links">
             <li>
-              <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn <FiArrowUpRight aria-hidden="true" />
+              <a href={`mailto:${profile.email}`} className="link">
+                <FiMail aria-hidden="true" /> {profile.email}
               </a>
             </li>
             <li>
-              <a href={githubUrl} target="_blank" rel="noreferrer">
-                GitHub <FiArrowUpRight aria-hidden="true" />
+              <a href={profile.linkedin} target="_blank" rel="noreferrer" className="link">
+                <FaLinkedin aria-hidden="true" /> LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href={githubUrl} target="_blank" rel="noreferrer" className="link">
+                <SiGithub aria-hidden="true" /> GitHub
               </a>
             </li>
             {profile.leetcode && (
               <li>
-                <a href={profile.leetcode} target="_blank" rel="noreferrer">
-                  LeetCode <FiArrowUpRight aria-hidden="true" />
+                <a href={profile.leetcode} target="_blank" rel="noreferrer" className="link">
+                  <SiLeetcode aria-hidden="true" /> LeetCode
                 </a>
               </li>
             )}
@@ -41,6 +45,6 @@ export default function Contact() {
 
         <ContactForm />
       </div>
-    </Section>
+    </section>
   );
 }

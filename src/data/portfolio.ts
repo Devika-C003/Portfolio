@@ -99,7 +99,7 @@ export const profile: Profile = {
   name: "Devika C.",
   title: "Software Engineer",
   tagline: "Engineering reliable software today. Building intelligent, AI-powered products tomorrow.",
-  availability: "Remote & global roles",
+  availability: "Open to remote & global roles",
   about:
     "I enjoy the whole journey, from a messy dataset or a rough idea to a product people genuinely like using. Today I build production diagnostics software with Python, Flask and React. Next, I want machine learning at the heart of everything I ship.",
   location: "Bengaluru, India",
@@ -119,22 +119,10 @@ export const profile: Profile = {
   },
 };
 
-/** "CrisprBits Pvt Ltd · Bengaluru" → "CrisprBits" for display */
-export const shortCompany = (company: string) =>
-  company.split("·")[0].trim().replace(/\s+(Pvt\.?\s*)?Ltd\.?$/i, "").trim();
-
 export const githubUrl = `https://github.com/${profile.githubUsername}`;
 
 
-/** What I do day to day (About section), written from real work */
-export const dayToDay: string[] = [
-  "Design and maintain REST APIs with Flask, SQLAlchemy and PostgreSQL.",
-  "Turn raw lab-instrument data into clean, trustworthy analytics and reports.",
-  "Ship and debug features end to end, across Python and React.",
-  "Write the test checklists and automation that keep releases boring, in a good way.",
-];
-
-/** Where I'm heading: AI & ML interests (About section) */
+/** AI & ML interests, shown prominently in the About section */
 export const aiInterests: { title: string; text: string; icon: "brain" | "network" | "sparkles" | "chart" }[] = [
   {
     title: "Machine Learning",
@@ -265,8 +253,9 @@ export const experience: Experience[] = [
 ];
 
 export const navLinks = [
+  { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "work", label: "Work" },
+  { id: "education", label: "Education" },
+  { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
-  { id: "contact", label: "Contact" },
 ] as const;
