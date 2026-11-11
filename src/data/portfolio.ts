@@ -106,11 +106,10 @@ export interface Profile {
 export const profile: Profile = {
   name: "Devika C.",
   title: "Associate Software Engineer",
-  tagline:
-    "Building scalable web apps with React.js, JavaScript and Python, with a strong interest in AI & Machine Learning.",
-  availability: "Open to Global & Remote Opportunities",
+  tagline: "I turn complex problems into clean, reliable software, and I’m exploring how AI can make it smarter.",
+  availability: "Open to remote & global roles",
   about:
-    "B.Tech graduate and Associate Software Engineer focused on building clean, user-centric and scalable web applications. I’m especially drawn to Artificial Intelligence and Machine Learning: turning data into models that make products smarter, from recommendation systems to predictive analytics.",
+    "I enjoy the whole journey, from a messy dataset or a rough idea to a product people genuinely like using. Today I build production diagnostics software with Python, Flask and React. Next, I want machine learning at the heart of everything I ship.",
   location: "Bengaluru, India",
   githubUsername: "Devika-C003",
   email: "devika.c008@gmail.com",
@@ -146,22 +145,22 @@ export const whatsappUrl: string | null = (() => {
 export const aiInterests: { title: string; text: string; icon: "brain" | "network" | "sparkles" | "chart" }[] = [
   {
     title: "Machine Learning",
-    text: "Supervised & unsupervised models: regression, classification, clustering.",
+    text: "Regression, classification and clustering on real-world data.",
     icon: "brain",
   },
   {
     title: "Deep Learning",
-    text: "Neural networks with TensorFlow & Keras for vision and sequence data.",
+    text: "Neural networks for images and sequences with TensorFlow.",
     icon: "network",
   },
   {
     title: "Generative AI & LLMs",
-    text: "Building apps on top of large language models and AI APIs.",
+    text: "Useful tools built on top of large language models.",
     icon: "sparkles",
   },
   {
-    title: "Recommenders & Predictive Analytics",
-    text: "Recommendation systems and forecasting that turn data into decisions.",
+    title: "Recommenders & Forecasting",
+    text: "Systems that predict what users need next.",
     icon: "chart",
   },
 ];
@@ -203,28 +202,21 @@ export const skillGroups: SkillGroup[] = [
 
 /** ML models / techniques shown as chips under the skills grid */
 export const mlModels: string[] = [
-  "Linear Regression",
-  "Logistic Regression",
+  "Linear & Logistic Regression",
   "Decision Trees",
   "Random Forest",
-  "XGBoost",
   "K-Nearest Neighbours",
-  "Support Vector Machines",
-  "Naive Bayes",
   "K-Means Clustering",
-  "PCA",
-  "Neural Networks (ANN)",
-  "CNN",
-  "Time-Series Forecasting",
+  "Neural Networks",
   "Collaborative Filtering",
   "Content-Based Recommendation",
-  "Hybrid Recommender Systems",
 ];
 
 export const projects: Project[] = [
   {
-    title: "E-Commerce Web Application",
-    description: "Responsive shopping platform with product, cart and order workflows.",
+    title: "Shopverse: E-Commerce Web App",
+    description:
+      "A responsive storefront with product discovery, cart and order workflows, powered by React and REST APIs. Go ahead, try the live preview.",
     tags: ["React", "JavaScript", "REST API", "CSS"],
     featured: true,
     link: githubUrl, // TODO: point to the project repo or live demo

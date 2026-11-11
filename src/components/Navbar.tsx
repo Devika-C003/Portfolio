@@ -42,7 +42,7 @@ export default function Navbar() {
             </a>
           ))}
           <a href="#contact" className="btn btn-outline nav-cta-mobile" onClick={() => setOpen(false)}>
-            Get in Touch <FiArrowUpRight />
+            Let’s Talk <FiArrowUpRight />
           </a>
         </nav>
 
@@ -50,7 +50,7 @@ export default function Navbar() {
           <ThemePicker />
 
           <a href="#contact" className="btn btn-outline btn-sm nav-cta">
-            Get in Touch <FiArrowUpRight />
+            Let’s Talk <FiArrowUpRight />
           </a>
 
           <button

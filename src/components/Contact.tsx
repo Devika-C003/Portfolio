@@ -10,11 +10,12 @@ export default function Contact() {
       <div className="cta contact reveal">
         <div className="contact-intro">
           <p className="cta-kicker">
-            <FiMail aria-hidden="true" /> Let’s Work Together
+            <FiMail aria-hidden="true" /> Let’s talk
           </p>
-          <h2>Have a project or opportunity?</h2>
+          <h2>Got an idea, a role or a problem worth solving?</h2>
           <p className="muted">
-            Send me a message and I’ll get back to you within a couple of days. Or reach me directly:
+            Whether it’s a full-time role, a freelance project or a chat about AI, my inbox is open. I usually
+            reply within a day or two.
           </p>
           {whatsappUrl && (
             <a href={whatsappUrl} target="_blank" rel="noreferrer" className="btn btn-whatsapp">

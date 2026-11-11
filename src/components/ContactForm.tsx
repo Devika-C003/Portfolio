@@ -58,8 +58,8 @@ export default function ContactForm() {
     return (
       <div className="contact-form contact-sent" role="status">
         <FiCheckCircle className="contact-sent-icon" aria-hidden="true" />
-        <h3>Thanks, your message is on its way!</h3>
-        <p className="muted">I’ll reply to the email you provided as soon as I can.</p>
+        <h3>Message received. Thank you!</h3>
+        <p className="muted">I’ll get back to you at the email you shared, usually within a day or two.</p>
         <button type="button" className="btn btn-outline btn-sm" onClick={() => setStatus({ kind: "idle" })}>
           Send another
         </button>

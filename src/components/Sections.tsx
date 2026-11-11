@@ -51,12 +51,10 @@ export function About() {
       <div className="ai-focus reveal">
         <div className="ai-focus-head">
           <span className="ai-badge">
-            <LuSparkles aria-hidden="true" /> Core interest
+            <LuSparkles aria-hidden="true" /> What excites me
           </span>
-          <h3>Artificial Intelligence &amp; Machine Learning</h3>
-          <p className="muted">
-            Beyond web development, this is what I’m most excited about and actively growing in.
-          </p>
+          <h3>AI &amp; Machine Learning</h3>
+          <p className="muted">Where I’m investing my learning, beyond the day job.</p>
         </div>
         <ul className="ai-grid stagger">
           {aiInterests.map((it, i) => {
@@ -119,7 +117,7 @@ export function Education() {
 
 export function Skills() {
   return (
-    <Section id="skills" index={3} title="Skills">
+    <Section id="skills" index={3} title="Tech Stack">
       <div className="skill-groups">
         {skillGroups.map((group) => (
           <div key={group.title} className="skill-group reveal">
@@ -139,7 +137,7 @@ export function Skills() {
         ))}
 
         <div className="skill-group reveal">
-          <h3 className="skill-group-title">ML Models</h3>
+          <h3 className="skill-group-title">ML Techniques</h3>
           <ul className="tags model-tags stagger">
             {mlModels.map((m, i) => (
               <li key={m} style={{ "--i": i } as CSSProperties}>
@@ -176,7 +174,7 @@ function GithubRepos() {
     <div className="repos" id="github-projects">
       <div className="repos-head">
         <h3>
-          All Projects on GitHub
+          More on GitHub
           {!loading && !error && <span className="repos-count">{repos.length}</span>}
         </h3>
         <a href={githubUrl} target="_blank" rel="noreferrer" className="link">
@@ -310,7 +308,7 @@ export function Projects() {
 
 export function ExperienceSection() {
   return (
-    <Section id="experience" index={5} title="Work Experience" kicker="What I have done so far" stacked>
+    <Section id="experience" index={5} title="Experience" kicker="Shipping code since 2023" stacked>
       <ol className="vtimeline">
         {experience.map((e, i) => (
           <li key={e.role + e.company} className={`reveal ${i % 2 === 0 ? "left" : "right"}`}>

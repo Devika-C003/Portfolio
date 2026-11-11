@@ -25,7 +25,7 @@ export default function Hero() {
               </p>
             )}
             <a href="#about" className="ai-pill">
-              <LuSparkles aria-hidden="true" /> Passionate about AI &amp; ML
+              <LuSparkles aria-hidden="true" /> Exploring AI &amp; ML
             </a>
           </div>
           <div className="hero-actions">

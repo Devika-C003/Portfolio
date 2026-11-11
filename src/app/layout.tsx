@@ -14,7 +14,7 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.title}`,
-  description: `${profile.name} — ${profile.title} building scalable web apps with React.js, JavaScript and Python.`,
+  description: `${profile.name}, ${profile.title} in Bengaluru. Full-stack developer (React, Python, Flask) exploring AI & Machine Learning.`,
 };
 
 export const viewport: Viewport = {
