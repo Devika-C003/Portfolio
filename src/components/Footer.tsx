@@ -1,7 +1,7 @@
 import { FiMail, FiMapPin } from "react-icons/fi";
-import { SiGithub, SiHackerrank, SiLeetcode } from "react-icons/si";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { githubUrl, profile, whatsappUrl } from "@/data/portfolio";
+import { SiGithub, SiLeetcode } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+import { githubUrl, profile } from "@/data/portfolio";
 
 export default function Footer() {
   return (
@@ -24,19 +24,9 @@ export default function Footer() {
             <SiLeetcode />
           </a>
         )}
-        {profile.hackerrank && (
-          <a href={profile.hackerrank} target="_blank" rel="noreferrer" aria-label="HackerRank">
-            <SiHackerrank />
-          </a>
-        )}
         <a href={`mailto:${profile.email}`} aria-label="Email">
           <FiMail />
         </a>
-        {whatsappUrl && (
-          <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp">
-            <FaWhatsapp />
-          </a>
-        )}
         <span className="footer-sep" />
         <span className="footer-loc">
           <FiMapPin aria-hidden="true" /> {profile.location}

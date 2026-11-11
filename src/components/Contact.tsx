@@ -1,7 +1,7 @@
 import { FiMail } from "react-icons/fi";
-import { SiGithub, SiHackerrank, SiLeetcode } from "react-icons/si";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { githubUrl, profile, whatsappUrl } from "@/data/portfolio";
+import { SiGithub, SiLeetcode } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+import { githubUrl, profile } from "@/data/portfolio";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {
@@ -17,11 +17,6 @@ export default function Contact() {
             Whether it’s a full-time role, a freelance project or a chat about AI, my inbox is open. I usually
             reply within a day or two.
           </p>
-          {whatsappUrl && (
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="btn btn-whatsapp">
-              <FaWhatsapp aria-hidden="true" /> Chat on WhatsApp
-            </a>
-          )}
           <ul className="contact-links">
             <li>
               <a href={`mailto:${profile.email}`} className="link">
@@ -42,13 +37,6 @@ export default function Contact() {
               <li>
                 <a href={profile.leetcode} target="_blank" rel="noreferrer" className="link">
                   <SiLeetcode aria-hidden="true" /> LeetCode
-                </a>
-              </li>
-            )}
-            {profile.hackerrank && (
-              <li>
-                <a href={profile.hackerrank} target="_blank" rel="noreferrer" className="link">
-                  <SiHackerrank aria-hidden="true" /> HackerRank
                 </a>
               </li>
             )}

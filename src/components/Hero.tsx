@@ -1,6 +1,6 @@
 import { FiArrowUpRight, FiDownload } from "react-icons/fi";
 import { LuSparkles } from "react-icons/lu";
-import { SiGithub, SiHackerrank, SiLeetcode } from "react-icons/si";
+import { SiGithub, SiLeetcode } from "react-icons/si";
 import { githubUrl, highlightStack, profile } from "../data/portfolio";
 import Avatar from "./Avatar";
 import { skillMeta } from "./icons";
@@ -44,18 +44,6 @@ export default function Hero() {
             {profile.leetcode && (
               <a href={profile.leetcode} target="_blank" rel="noreferrer" aria-label="LeetCode" title="LeetCode" className="lc">
                 <SiLeetcode />
-              </a>
-            )}
-            {profile.hackerrank && (
-              <a
-                href={profile.hackerrank}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="HackerRank"
-                title="HackerRank"
-                className="hr"
-              >
-                <SiHackerrank />
               </a>
             )}
           </div>

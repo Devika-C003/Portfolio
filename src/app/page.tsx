@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { About, Education, ExperienceSection, Projects, Skills } from "@/components/Sections";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

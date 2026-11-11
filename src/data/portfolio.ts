@@ -74,17 +74,9 @@ export interface Profile {
   location: string;
   githubUsername: string;
   email: string;
-  /**
-   * WhatsApp number with country code, digits only or with spaces/+, e.g. "+91 98765 43210".
-   * A wa.me link also works. Leave "" to hide every WhatsApp button.
-   */
-  whatsapp: string;
-  /** Pre-filled first message when someone opens the WhatsApp chat */
-  whatsappMessage: string;
   linkedin: string;
-  /** Full profile URLs; leave "" to hide */
+  /** Full profile URL; leave "" to hide */
   leetcode: string;
-  hackerrank: string;
   /** Put your resume at public/resume.pdf */
   resumeUrl: string;
   education: {
@@ -105,19 +97,16 @@ export interface Profile {
 
 export const profile: Profile = {
   name: "Devika C.",
-  title: "Associate Software Engineer",
-  tagline: "I turn complex problems into clean, reliable software, and I’m exploring how AI can make it smarter.",
+  title: "Software Engineer",
+  tagline: "Engineering reliable software today. Building intelligent, AI-powered products tomorrow.",
   availability: "Open to remote & global roles",
   about:
     "I enjoy the whole journey, from a messy dataset or a rough idea to a product people genuinely like using. Today I build production diagnostics software with Python, Flask and React. Next, I want machine learning at the heart of everything I ship.",
   location: "Bengaluru, India",
   githubUsername: "Devika-C003",
   email: "devika.c008@gmail.com",
-  whatsapp: "", // TODO: add your number with country code, e.g. "+91 98765 43210"
-  whatsappMessage: "Hi Devika, I saw your portfolio and would like to connect.",
   linkedin: "https://www.linkedin.com/in/devika-c-it",
   leetcode: "https://leetcode.com/u/Devika_C003/",
-  hackerrank: "", // TODO: e.g. "https://www.hackerrank.com/profile/your_username"
   resumeUrl: "/resume.pdf",
   education: {
     degree: "Bachelor of Technology (B.Tech)",
@@ -132,14 +121,6 @@ export const profile: Profile = {
 
 export const githubUrl = `https://github.com/${profile.githubUsername}`;
 
-/** Click-to-chat WhatsApp link, or null when no number is set */
-export const whatsappUrl: string | null = (() => {
-  const w = profile.whatsapp.trim();
-  if (!w) return null;
-  if (/^https?:\/\//.test(w)) return w;
-  const digits = w.replace(/\D/g, "");
-  return digits ? `https://wa.me/${digits}?text=${encodeURIComponent(profile.whatsappMessage)}` : null;
-})();
 
 /** AI & ML interests, shown prominently in the About section */
 export const aiInterests: { title: string; text: string; icon: "brain" | "network" | "sparkles" | "chart" }[] = [
