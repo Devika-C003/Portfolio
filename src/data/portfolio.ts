@@ -253,7 +253,7 @@ export const notes: Note[] = [
 ];
 
 /** GitHub repos to leave out of "All Projects on GitHub" (exact repo names, case-insensitive) */
-export const hiddenRepos: string[] = ["API", "LandingPage", "Portfolio_website", "RestAPI", "CRUD_OPERATIONS", "Ecommerce_Recommendation"];
+export const hiddenRepos: string[] = ["API", "LandingPage", "Portfolio_website", "RestAPI", "CRUD_OPERATIONS", "Ecommerce_Recommendation", "Portfolio"];
 
 // Work experience and internships. Newest first.
 export const experience: Experience[] = [
