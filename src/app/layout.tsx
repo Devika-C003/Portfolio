@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: `${profile.name} Portfolio`,
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: [{ url: "/devika.jpg", width: 535, height: 511, alt: "Portrait of Devika C." }],
+    images: [{ url: "/devika.jpg", width: 600, height: 750, alt: "Portrait of Devika C." }],
   },
   twitter: {
     card: "summary",

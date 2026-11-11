@@ -2137,20 +2137,36 @@ ol {
 }
 
 .about-photo {
+  position: relative;
   flex-shrink: 0;
-  width: 220px;
+  width: 230px;
   margin: 0;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 14px 30px -20px var(--shadow);
-  transform: rotate(-1.5deg);
-  transition: transform 0.4s cubic-bezier(0.3, 1.4, 0.5, 1);
 }
 
-.about-photo:hover {
-  transform: rotate(0deg) scale(1.02);
+/* thin accent outline offset behind the photo, a classic editorial frame */
+.about-photo::before {
+  content: "";
+  position: absolute;
+  inset: 12px -12px -12px 12px;
+  border: 1.5px solid var(--accent);
+  border-radius: 14px;
+  opacity: 0.55;
+  transition: transform 0.4s ease;
+}
+
+.about-photo img {
+  position: relative;
+  border-radius: 14px;
+  box-shadow: 0 18px 36px -22px var(--shadow);
+  transition: transform 0.4s ease;
+}
+
+.about-photo:hover img {
+  transform: translate(-3px, -3px);
+}
+
+.about-photo:hover::before {
+  transform: translate(3px, 3px);
 }
 
 .about-photo img {

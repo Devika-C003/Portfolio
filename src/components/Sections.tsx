@@ -46,7 +46,7 @@ export function About() {
     <Section id="about" index={1} title="About">
       <div className="about">
         <figure className="about-photo">
-          <img src="/devika.jpg" alt="Portrait of Devika C." width={535} height={511} loading="lazy" />
+          <img src="/devika.jpg" alt="Portrait of Devika C., software engineer" width={600} height={750} loading="lazy" />
         </figure>
         <div className="about-text">
           <h3 className="about-heading">A little about me</h3>
