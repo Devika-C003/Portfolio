@@ -24,7 +24,7 @@ import {
   experience,
   githubUrl,
   hiddenRepos,
-  mlModels,
+  notes,
   profile,
   projects,
   skillGroups,
@@ -45,16 +45,24 @@ export function About() {
   return (
     <Section id="about" index={1} title="About">
       <div className="about">
-        <p className="about-text">{profile.about}</p>
+        <figure className="about-photo">
+          <img src="/devika.jpg" alt="Portrait of Devika C." width={535} height={511} loading="lazy" />
+        </figure>
+        <div className="about-text">
+          <h3 className="about-heading">A little about me</h3>
+          {profile.about.map((para) => (
+            <p key={para}>{para}</p>
+          ))}
+        </div>
       </div>
 
       <div className="ai-focus reveal">
         <div className="ai-focus-head">
           <span className="ai-badge">
-            <LuSparkles aria-hidden="true" /> What excites me
+            <LuSparkles aria-hidden="true" /> Currently exploring
           </span>
           <h3>AI &amp; Machine Learning</h3>
-          <p className="muted">Where I’m investing my learning, beyond the day job.</p>
+          <p className="muted">What I’ve built so far, and what I’m learning next.</p>
         </div>
         <ul className="ai-grid stagger">
           {aiInterests.map((it, i) => {
@@ -136,16 +144,6 @@ export function Skills() {
           </div>
         ))}
 
-        <div className="skill-group reveal">
-          <h3 className="skill-group-title">ML Techniques</h3>
-          <ul className="tags model-tags stagger">
-            {mlModels.map((m, i) => (
-              <li key={m} style={{ "--i": i } as CSSProperties}>
-                {m}
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </Section>
   );
@@ -247,6 +245,28 @@ function GithubRepos() {
   );
 }
 
+function CaseStudy({ p }: { p: (typeof projects)[number] }) {
+  const rows: [string, string | undefined][] = [
+    ["The problem", p.problem],
+    ["What I built", p.built],
+    ["Key decision", p.decisions],
+    ["The challenge", p.challenge],
+    ["Result", p.result],
+  ];
+  const shown = rows.filter(([, v]) => v);
+  if (!shown.length) return null;
+  return (
+    <dl className="case">
+      {shown.map(([k, v]) => (
+        <div key={k}>
+          <dt>{k}</dt>
+          <dd>{v}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
 export function Projects() {
   const featured = projects.find((p) => p.featured) ?? projects[0];
   const others = projects.filter((p) => p !== featured);
@@ -259,9 +279,10 @@ export function Projects() {
             <ShopPreview />
           </div>
           <div className="project-info">
-            <p className="eyebrow accent">Featured</p>
+            <p className="eyebrow accent">Case study</p>
             <h3>{featured.title}</h3>
             <p className="muted">{featured.description}</p>
+            <CaseStudy p={featured} />
             <div className="project-footer">
               <ul className="tags">
                 {featured.tags.map((t) => (
@@ -283,25 +304,57 @@ export function Projects() {
       )}
 
       {others.length > 0 && (
-        <div className="repos-grid">
-          {others.map((p) => (
-            <a key={p.title} href={p.link} target="_blank" rel="noreferrer" className="card repo">
-              <div className="repo-title">
-                <span>{p.title}</span>
-                <FiArrowUpRight />
-              </div>
-              <p className="muted">{p.description}</p>
-              <ul className="tags">
-                {p.tags.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-            </a>
-          ))}
+        <div className="case-grid">
+          {others.map((p) => {
+            const external = p.link.startsWith("http");
+            return (
+              <article key={p.title} className="card case-card">
+                <p className="eyebrow accent">Case study</p>
+                <h3>{p.title}</h3>
+                <p className="muted">{p.description}</p>
+                <CaseStudy p={p} />
+                {p.note && <p className="case-note">{p.note}</p>}
+                <div className="project-footer">
+                  <ul className="tags">
+                    {p.tags.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                  <a
+                    href={p.link}
+                    {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                    className="link"
+                  >
+                    {external ? "View code" : "See experience"} <FiArrowUpRight />
+                  </a>
+                </div>
+              </article>
+            );
+          })}
         </div>
       )}
 
       <GithubRepos />
+    </Section>
+  );
+}
+
+export function Notes() {
+  const published = notes.filter((n) => n.published);
+  if (!published.length) return null;
+  return (
+    <Section id="notes" index={6} title="Engineering Notes" kicker="Things I learned the hard way" stacked>
+      <ul className="notes">
+        {published.map((n) => (
+          <li key={n.title}>
+            <a href={n.link ?? "#"} target="_blank" rel="noreferrer" className="note">
+              <span className="note-date">{n.date}</span>
+              <span className="note-title">{n.title}</span>
+              <span className="muted">{n.summary}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 }
@@ -323,6 +376,8 @@ export function ExperienceSection() {
               <h3>{e.role}</h3>
               <p className="vt-company">{e.company}</p>
               {e.summary && <p className="vt-summary">{e.summary}</p>}
+              {e.story && <p className="vt-story">{e.story}</p>}
+              {e.story && <p className="vt-label">Technical contributions</p>}
               <ul>
                 {e.points.map((p) => (
                   <li key={p}>{p}</li>

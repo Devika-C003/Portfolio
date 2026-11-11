@@ -3,11 +3,13 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import { About, Education, ExperienceSection, Projects, Skills } from "@/components/Sections";
+import { About, Education, ExperienceSection, Notes, Projects, Skills } from "@/components/Sections";
+import { jsonLd } from "@/lib/seo";
 
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <RevealOnScroll />
       <Navbar />
       <main>
@@ -17,6 +19,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <ExperienceSection />
+        <Notes />
         <Contact />
       </main>
       <Footer />

@@ -89,4 +89,5 @@ export const skillMeta: Record<SkillId, SkillMeta> = {
   uiux: { label: "UI/UX", Icon: FiPenTool, color: "#c2185b" },
   figma: { label: "Figma", Icon: SiFigma, color: "#f24e1e" },
   wordpress: { label: "WordPress", Icon: SiWordpress, color: "#21759b" },
+  recsys: { label: "Recommender Systems", Icon: LuChartBar, color: "#8e44ad" },
 };

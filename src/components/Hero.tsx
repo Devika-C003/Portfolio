@@ -17,6 +17,7 @@ export default function Hero() {
             Hi, I’m <span className="gradient-text">{first} {rest.join(" ")}</span>
           </h1>
           <p className="hero-tagline">{profile.tagline}</p>
+          <p className="hero-intro">{profile.intro}</p>
           <div className="hero-pills">
             {profile.availability && (
               <p className="availability">

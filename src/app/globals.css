@@ -2120,6 +2120,187 @@ ol {
   }
 }
 
+/* ---------- Content additions: intro, about photo, case studies, notes ---------- */
+.hero-intro {
+  max-width: 540px;
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.hero-text > :nth-child(6) { animation-delay: 0.4s; }
+.hero-text > :nth-child(7) { animation-delay: 0.48s; }
+
+.about {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.about-photo {
+  flex-shrink: 0;
+  width: 220px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 14px 30px -20px var(--shadow);
+  transform: rotate(-1.5deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.about-photo:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about .about-text {
+  display: grid;
+  gap: 12px;
+  max-width: 640px;
+}
+
+.about-heading {
+  margin-bottom: 2px;
+  font-size: 1.35rem;
+}
+
+/* case-study details (shared by featured project and case cards) */
+.case {
+  display: grid;
+  gap: 10px;
+  margin: 6px 0 4px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--accent-soft);
+}
+
+.case dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.case dd {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
+}
+
+.case-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 34px -24px var(--shadow);
+}
+
+.case-card h3 {
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.case-card .project-footer {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.case-card .link {
+  white-space: nowrap;
+}
+
+.case-note {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* experience narrative */
+.vt-story {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: var(--text-2);
+}
+
+.vt-label {
+  margin-top: 16px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.vt-label + ul {
+  margin-top: 8px;
+}
+
+/* engineering notes */
+.notes {
+  display: grid;
+  gap: 12px;
+}
+
+.note {
+  display: grid;
+  gap: 4px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  transition: border-color 0.2s, transform 0.25s;
+}
+
+.note:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.note-date {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.note-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+  }
+
+  .about-photo {
+    width: 180px;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Theme picker ---------- */
 .nav-right {
   display: flex;

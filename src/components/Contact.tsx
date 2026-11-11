@@ -12,10 +12,11 @@ export default function Contact() {
           <p className="cta-kicker">
             <FiMail aria-hidden="true" /> Let’s talk
           </p>
-          <h2>Got an idea, a role or a problem worth solving?</h2>
+          <h2>Hiring a software engineer? I’d love to hear about it.</h2>
           <p className="muted">
-            Whether it’s a full-time role, a freelance project or a chat about AI, my inbox is open. I usually
-            reply within a day or two.
+            I’m open to software engineering roles, remote or global. If you’d like to talk about a role,
+            diagnostics software or a machine learning idea, send me a message. I usually reply within a day
+            or two.
           </p>
           <ul className="contact-links">
             <li>
