@@ -1,69 +1,84 @@
-import { FiArrowUpRight, FiDownload } from "react-icons/fi";
-import { LuSparkles } from "react-icons/lu";
-import { SiGithub, SiLeetcode } from "react-icons/si";
-import { githubUrl, highlightStack, profile } from "../data/portfolio";
+import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
+import { experience, githubUrl, profile, shortCompany } from "../data/portfolio";
 import Avatar from "./Avatar";
-import { skillMeta } from "./icons";
 
 export default function Hero() {
-  const [first, ...rest] = profile.name.split(" ");
+  const current = experience[0];
+  const company = current ? shortCompany(current.company) : "";
+  const { degree, school, cgpa, cgpaScale } = profile.education;
+  const shortDegree = degree.match(/\(([^)]+)\)/)?.[1] ?? degree;
 
   return (
-    <section id="home" className="hero">
-      <div className="container hero-content">
+    <section id="top" className="hero">
+      <div className="container hero-grid">
         <div className="hero-text">
-          <p className="eyebrow">{profile.title}</p>
+          <p className="kicker">
+            {profile.title} · {profile.location}
+          </p>
           <h1 className="hero-title">
-            Hi, I’m <span className="gradient-text">{first} {rest.join(" ")}</span>
+            Engineering reliable software today. Building <em>intelligent</em>, AI-powered products tomorrow.
           </h1>
-          <p className="hero-tagline">{profile.tagline}</p>
-          <div className="hero-pills">
-            {profile.availability && (
-              <p className="availability">
-                <span className="availability-dot" aria-hidden="true" />
-                {profile.availability}
-              </p>
-            )}
-            <a href="#about" className="ai-pill">
-              <LuSparkles aria-hidden="true" /> Exploring AI &amp; ML
-            </a>
-          </div>
+          <p className="hero-lede">
+            I’m Devika, a software engineer at {company}, where I build the backend, data pipelines and
+            reports behind a production molecular diagnostics platform. Outside the day job, I’m going deep on
+            machine learning.
+          </p>
+
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">
-              View Projects <FiArrowUpRight />
+            <a href="#work" className="btn btn-primary">
+              See my work
             </a>
-            <a href={profile.resumeUrl} className="btn btn-outline" download>
-              <FiDownload /> Resume
+            <a href={profile.resumeUrl} className="text-link" download>
+              Download résumé <FiArrowDown aria-hidden="true" />
             </a>
           </div>
-          <div className="code-profiles">
-            <span className="muted small">Find me on</span>
-            <a href={githubUrl} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
-              <SiGithub />
-            </a>
-            {profile.leetcode && (
-              <a href={profile.leetcode} target="_blank" rel="noreferrer" aria-label="LeetCode" title="LeetCode" className="lc">
-                <SiLeetcode />
+
+          <ul className="hero-links">
+            <li>
+              <a href={githubUrl} target="_blank" rel="noreferrer">
+                GitHub <FiArrowUpRight aria-hidden="true" />
               </a>
+            </li>
+            <li>
+              <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                LinkedIn <FiArrowUpRight aria-hidden="true" />
+              </a>
+            </li>
+            {profile.leetcode && (
+              <li>
+                <a href={profile.leetcode} target="_blank" rel="noreferrer">
+                  LeetCode <FiArrowUpRight aria-hidden="true" />
+                </a>
+              </li>
             )}
-          </div>
+            <li>
+              <a href={`mailto:${profile.email}`}>Email</a>
+            </li>
+          </ul>
         </div>
 
         <Avatar />
       </div>
 
       <div className="container">
-        <ul className="stack-strip">
-          {highlightStack.map((id) => {
-            const { Icon, label } = skillMeta[id];
-            return (
-              <li key={id}>
-                <Icon className="stack-icon" aria-hidden="true" />
-                <span>{label}</span>
-              </li>
-            );
-          })}
-        </ul>
+        <dl className="hero-facts">
+          <div>
+            <dt>Now</dt>
+            <dd>
+              {current?.role}, {company}
+            </dd>
+          </div>
+          <div>
+            <dt>Studied</dt>
+            <dd>
+              {shortDegree}, {school.split(",")[0]} · <strong>{cgpa}</strong>/{cgpaScale} CGPA
+            </dd>
+          </div>
+          <div>
+            <dt>Open to</dt>
+            <dd>{profile.availability}</dd>
+          </div>
+        </dl>
       </div>
     </section>
   );

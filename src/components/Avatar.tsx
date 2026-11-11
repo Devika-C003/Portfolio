@@ -1,6 +1,3 @@
-import { SiPython, SiReact } from "react-icons/si";
-import { LuBrainCircuit } from "react-icons/lu";
-
 /**
  * Illustrated developer-at-desk avatar. Pure SVG; all colours come from the
  * active theme via CSS classes (see "Hero avatar" in globals.css).
@@ -11,7 +8,6 @@ export default function Avatar() {
     <div className="hero-art" aria-hidden="true">
       <svg className="avatar" viewBox="0 0 400 380">
         {/* backdrop */}
-        <circle className="av-ring" cx="200" cy="190" r="172" />
         <circle className="av-blob" cx="200" cy="190" r="150" />
 
         {/* plant */}
@@ -116,16 +112,6 @@ export default function Avatar() {
         <line className="av-desk" x1="40" y1="367" x2="360" y2="367" />
       </svg>
 
-      <span className="av-bubble">console.log("Hi!")</span>
-      <span className="av-chip c1">
-        <SiReact />
-      </span>
-      <span className="av-chip c2">
-        <SiPython />
-      </span>
-      <span className="av-chip c3">
-        <LuBrainCircuit />
-      </span>
     </div>
   );
 }
