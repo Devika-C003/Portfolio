@@ -130,8 +130,9 @@ export const profile: Profile = {
   availability: "Open to remote & global roles",
   about: [
     "I like understanding how things work, and then figuring out how to make them better.",
-    "Most of my work sits where code meets real-world data. In diagnostics, small details matter, so I’ve learned to read data carefully, trace problems back to their root, and make sure what people see is accurate.",
-    "What I enjoy most is the problem-solving loop: dig into an issue, try a few approaches, and keep going until the result is something people can rely on. Outside work, I build side projects to learn the things I don’t use day to day.",
+    "I started on the frontend: React screens as an intern in 2023, then WordPress sites for real clients, then a product team where I wired up APIs and learned how much good error handling matters. Each step pulled me further down the stack, into APIs, data pipelines and, now, software for diagnostic labs.",
+    "That’s where I learned that small details matter. One fix I’m proud of: tracing a column-mapping bug in lab-instrument data that was quietly breaking the analytics further down the line.",
+    "Outside work, I build things to learn: an air-quality model that predicts carbon monoxide levels, and a recommendation engine that compares three ways of suggesting products.",
   ],
   location: "Bengaluru, India",
   githubUsername: "Devika-C003",
@@ -162,7 +163,7 @@ export const aiInterests: { title: string; text: string; icon: "brain" | "networ
   },
   {
     title: "Predictive modelling",
-    text: "Predicted carbon monoxide levels from air-quality data in my Airquality Analysis project.",
+    text: "Compared six regression models to predict CO levels; tuned XGBoost scored R² 0.94.",
     icon: "brain",
   },
   {
@@ -187,18 +188,43 @@ export interface SkillGroup {
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Professional experience",
-    items: ["python", "flask", "sqlalchemy", "postgresql", "restapi", "react", "javascript", "antd", "html", "css", "wordpress"],
+    title: "Used at work every day",
+    items: ["python", "flask", "sqlalchemy", "postgresql", "restapi", "react", "docker", "gcp"],
   },
   {
-    title: "Tools & workflow",
-    items: ["git", "github", "docker", "gcp", "pytest", "postman"],
+    title: "Used in projects & internships",
+    items: ["javascript", "html", "css", "antd", "graphql", "wordpress", "git"],
   },
   {
     title: "Currently exploring",
-    items: ["ml", "pandas", "numpy", "sklearn", "tensorflow", "jupyter", "recsys"],
+    items: ["ml", "sklearn", "pandas", "jupyter", "recsys", "tensorflow"],
   },
 ];
+
+/** Where each skill was actually used, shown under the skill name */
+export const skillEvidence: Partial<Record<SkillId, string>> = {
+  python: "CrisprBits · Air Quality",
+  flask: "CrisprBits · Recommender",
+  sqlalchemy: "CrisprBits",
+  postgresql: "CrisprBits",
+  restapi: "CrisprBits · ZatoOrigin",
+  react: "ZatoOrigin · Tif Labs",
+  docker: "CrisprBits",
+  gcp: "CrisprBits",
+  javascript: "Shopverse · Event Mgmt",
+  html: "Event Mgmt",
+  css: "Shopverse",
+  antd: "ZatoOrigin",
+  graphql: "Event Mgmt",
+  wordpress: "Xtransmatrix",
+  git: "All projects",
+  ml: "Air Quality · Recommender",
+  sklearn: "Air Quality",
+  pandas: "Air Quality",
+  jupyter: "Air Quality · Recommender",
+  recsys: "Recommender",
+  tensorflow: "Learning now",
+};
 
 
 export const projects: Project[] = [
@@ -212,6 +238,17 @@ export const projects: Project[] = [
     problem: "Shoppers expect to browse, filter and check out smoothly on any screen size.",
     built: "The React front end: product listing, category filters, cart state and the checkout flow, wired to REST APIs.",
     decisions: "Kept cart state in one place so counts, totals and buttons always stay in sync across components.",
+  },
+  {
+    title: "Predicting Air Pollution (CO Levels)",
+    description:
+      "A machine learning study that predicts carbon monoxide levels from air-quality sensor data, served through a small Streamlit app.",
+    tags: ["Python", "XGBoost", "scikit-learn", "Streamlit"],
+    link: "https://github.com/Devika-C003/Airquality_Analysis",
+    problem: "Accurate CO forecasts help city planners and environmental agencies act before pollution becomes a health risk.",
+    built: "Cleaned and explored the sensor data in Jupyter, trained six regression models, and wrapped the best one in a Streamlit app for live predictions.",
+    decisions: "Compared Linear, Ridge, Lasso, Polynomial, SVR and XGBoost side by side, then tuned XGBoost with 5-fold GridSearchCV.",
+    result: "Tuned XGBoost reached R² 0.94 (MSE 0.135), ahead of the linear baselines at about 0.92.",
   },
   {
     title: "E-Commerce Recommendation Engine",
@@ -234,6 +271,16 @@ export const projects: Project[] = [
     challenge: "Tracing a wrong result back through several layers to the exact point where the data went wrong.",
     note: "Shared at a high level only; no confidential details.",
   },
+  {
+    title: "Event Management System",
+    description: "A web app with separate admin and user dashboards for creating, browsing and registering for events, backed by GraphQL.",
+    tags: ["JavaScript", "GraphQL", "HTML", "CSS"],
+    link: "https://github.com/Devika-C003/Event_Mangement",
+    problem: "Admins need to manage events while attendees just want to find and register for them, so one screen doesn’t fit both.",
+    built: "Role-based dashboards: admins create and delete events in a table view; users browse event cards, register and cancel registrations.",
+    decisions: "Used GraphQL queries and mutations through fetch() so each screen requests only the data it needs.",
+    challenge: "Showing the right dashboard after login. I stored the role on sign-in and rendered the matching view from it.",
+  },
 ];
 
 /** Short engineering write-ups. Only `published: true` notes are shown. */
@@ -253,7 +300,7 @@ export const notes: Note[] = [
 ];
 
 /** GitHub repos to leave out of "All Projects on GitHub" (exact repo names, case-insensitive) */
-export const hiddenRepos: string[] = ["API", "LandingPage", "Portfolio_website", "RestAPI", "CRUD_OPERATIONS", "Ecommerce_Recommendation", "Portfolio"];
+export const hiddenRepos: string[] = ["API", "LandingPage", "Portfolio_website", "RestAPI", "CRUD_OPERATIONS", "Ecommerce_Recommendation", "Portfolio", "Airquality_Analysis", "Event_Mangement"];
 
 // Work experience and internships. Newest first.
 export const experience: Experience[] = [

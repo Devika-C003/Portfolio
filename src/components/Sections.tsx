@@ -27,6 +27,7 @@ import {
   notes,
   profile,
   projects,
+  skillEvidence,
   skillGroups,
 } from "../data/portfolio";
 import { useGithubRepos } from "../hooks/useGithubRepos";
@@ -125,7 +126,7 @@ export function Education() {
 
 export function Skills() {
   return (
-    <Section id="skills" index={3} title="Tech Stack">
+    <Section id="skills" index={3} title="Tech Stack" kicker="Each one shows where I used it" stacked>
       <div className="skill-groups">
         {skillGroups.map((group) => (
           <div key={group.title} className="skill-group reveal">
@@ -137,6 +138,7 @@ export function Skills() {
                   <li key={id} className="card skill" style={{ "--i": i } as CSSProperties}>
                     <Icon style={{ color }} className="skill-icon" aria-hidden="true" />
                     <span>{label}</span>
+                    {skillEvidence[id] && <span className="skill-evidence">{skillEvidence[id]}</span>}
                   </li>
                 );
               })}
