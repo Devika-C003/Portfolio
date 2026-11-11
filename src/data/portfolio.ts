@@ -126,13 +126,12 @@ export const profile: Profile = {
   title: "Software Engineer",
   tagline: "I build software that solves real problems.",
   intro:
-    "I’m a software engineer working with Python, React and data-driven applications. At CrisprBits, I help develop software for molecular diagnostics. I’m also exploring how machine learning can make everyday applications smarter and more useful.",
+    "I work with Python, React and data-driven applications, currently building software for molecular diagnostics, and exploring how machine learning can make everyday tools smarter.",
   availability: "Open to remote & global roles",
   about: [
-    "I’m a software engineer who enjoys understanding how things work and figuring out how to make them better.",
-    "My experience spans frontend development, backend APIs and data processing. At CrisprBits, I work on software that supports molecular diagnostic testing, where getting the details right really matters.",
-    "What I enjoy most about engineering is the problem-solving process: understanding an issue, experimenting with different approaches, and eventually building something that works reliably.",
-    "Lately, I’ve been exploring machine learning and AI. I want to move beyond tutorials and apply these technologies to practical problems.",
+    "I like understanding how things work, and then figuring out how to make them better.",
+    "Most of my work sits where code meets real-world data. In diagnostics, small details matter, so I’ve learned to read data carefully, trace problems back to their root, and make sure what people see is accurate.",
+    "What I enjoy most is the problem-solving loop: dig into an issue, try a few approaches, and keep going until the result is something people can rely on. Outside work, I build side projects to learn the things I don’t use day to day.",
   ],
   location: "Bengaluru, India",
   githubUsername: "Devika-C003",
